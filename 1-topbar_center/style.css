@@ -1,0 +1,85 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    text-align: center
+}
+
+.site-topbar {
+    position: relative;
+    z-index: 30;
+    height: 40px;
+    color: white;
+    background: #333;
+}
+
+.topbar-container {
+    width: 1226px;
+    height: 40px;
+    /* background-color: rgba(0, 0, 255, 0.5); */
+
+    position: relative;
+    left: 50%;
+    margin-left: -613px;
+
+}
+
+.topbar-container-cont {
+    height: 40px;
+    position: relative;
+    float: left;
+    font-size: 12px;
+    line-height: 40px;
+    /*  div 中的文字垂直居中 */
+}
+
+.contactphone {
+    margin: 20px;
+}
+
+.topbar-container-acc {
+    height: 40px;
+    position: relative;
+    float: right;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 40px;
+    /*  div 中的文字垂直居中 */
+}
+
+.shopping_bag {
+    position: relative;
+    float: right;
+    /* background-color: gray; */
+    padding: 0 20px;
+}
+
+.shopping_bag:hover {
+    background-color: gray;
+}
+
+.box_line {
+    position: relative;
+    float: right;
+}
+
+.my_account {
+    position: relative;
+    float: right;
+    /* background-color: gray; */
+    padding: 0 20px;
+}
+
+.my_account:hover {
+
+    background-color: gray;
+}
+
+.relative {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: blue solid 1px;
+}
