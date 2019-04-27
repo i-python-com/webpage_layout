@@ -1,0 +1,125 @@
+<!--
+三栏布局
+三个部分，分别是wrapper、navigation、extra
+要求：
+wrapper 左对齐
+navigation 位于 wrapper 右侧，宽度 25%
+extra 位于 navigation 右侧，宽度 200px
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style>
+        .header {
+            height: 60px;
+            line-height: 60px;
+            background-color: #eee;
+        }
+
+        .footer {
+            clear: both;
+            height: 30px;
+            line-height: 30px;
+            background-color: #666;
+        }
+
+        /* 使用calc()
+        .wrapper {
+            float: left;
+            margin-right: calc(25% + 200px);
+        }
+
+        .navigation {
+            width: 25%;
+            float: left;
+            margin-left: calc(-25% - 200px);
+            background-color: skyblue;
+        }
+
+        .extra {
+            width: 200px;
+            float: left;
+            margin-left: -200px;
+            background-color: orange;
+        }
+*/
+
+        /* 不使用calc() */
+        .wrapper {
+            width: 100%;
+            float: left;
+            margin-left: -200px;
+            /* 为extra预留空间, 抵消掉content的 margin-left: 200px */
+        }
+
+        /*
+        先用content的margin预留左右空间
+        content右边的空间给中间的div
+        content左边的空调给最右边的div
+        再用wrapper的margin-left负值把左边的空间移到最右边
+        再把中间的margin-left负值平移自身的宽度，留出右边空间
+        */
+        .content {
+            margin-left: 200px;
+            margin-right: 25%;
+        }
+
+        .navigation {
+            width: 25%;
+            float: left;
+            margin-left: -25%;
+            background-color: skyblue;
+        }
+
+        .extra {
+            width: 200px;
+            float: left;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Header</h1>
+        </div>
+        <div class="wrapper">
+            <div class="content">
+                <p><strong>1) Content here. </strong>column long long column very long fill fill fill long text text
+                    column text silly very make long very fill silly make make long make text fill very long text column
+                    silly silly very column long very column filler fill long make filler long silly very long silly
+                    silly silly long filler make column filler make silly long long fill very.</p>
+                <p>very make make fill silly long long filler column long make silly silly column filler fill fill very
+                    filler text fill filler column make fill make text very make make very fill fill long make very
+                    filler column very long very filler silly very make filler silly make make column column</p>
+                <p>fill long make long text very make long fill column make text very silly column filler silly text
+                    fill text filler filler filler make make make make text filler fill column filler make silly make
+                    text text fill make very filler column very</p>
+                <p>column text long column make silly long text filler silly very very very long filler fill very fill
+                    silly very make make filler text filler text make silly text text long fill fill make text fill long
+                    text very silly long long filler filler fill silly long make column make silly long column long make
+                    very</p>
+            </div>
+        </div>
+        <div class="navigation">
+            <p><strong>2) Navigation here.</strong>long long fill filler very fill column column silly filler very
+                filler fill fill filler text fill very silly fill text filler silly silly filler fill very make fill
+                column text column very very column fill fill very silly column silly silly fill fill long filler</p>
+        </div>
+        <div class="extra">
+            <p><strong>3) More stuff here.</strong>very text make long silly make text very very text make long filler
+                very make column make silly column fill silly column long make silly filler column filler silly long
+                long column fill silly column very</p>
+        </div>
+        <div class="footer">
+            <p>Here it goes the footer</p>
+        </div>
+    </div>
+</body>
+
+</html>
